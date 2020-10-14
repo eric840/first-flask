@@ -1,13 +1,15 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
-
+@app.route("/")
+def index():
+    signed_in = True # we are hardcoding this just to demonstrate how we can do conditionals in our template files, in future we won't be hardcoding this.
+    return render_template('index.html', signed_in=signed_in)
 
 @app.route("/<name>")
 def index_name(name):
     name = name.upper()
     return render_template('index.html', name=name)
-
 
 @app.route("/another")
 def show():
