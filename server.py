@@ -19,5 +19,9 @@ def show():
 def show_user(username):
     return f"Hi {username[0:3]}"
 
+@app.route("/contact")
+def contact():
+    return render_template('contact.html')
+
 if __name__ == '__main__': # Revisit previous challenge if you're uncertain what this does https://code.nextacademy.com/lessons/name-main/424
    app.run()
