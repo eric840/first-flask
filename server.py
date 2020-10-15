@@ -21,7 +21,8 @@ def show_user(username):
 
 @app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    signed_in = True # we are hardcoding this just to demonstrate how we can do conditionals in our template files
+    return render_template('contact.html', signed_in=signed_in)
 
 if __name__ == '__main__': # Revisit previous challenge if you're uncertain what this does https://code.nextacademy.com/lessons/name-main/424
    app.run()
