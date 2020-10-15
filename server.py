@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    signed_in = True # we are hardcoding this just to demonstrate how we can do conditionals in our template files, in future we won't be hardcoding this.
-    return render_template('index.html', signed_in=signed_in)
+    first_name = request.args.get('first_name')
+    return render_template('index.html', first_name=first_name)
 
 @app.route("/<name>")
 def index_name(name):
