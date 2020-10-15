@@ -1,7 +1,7 @@
 {% extends "_main.html" %}
 {% block content %}
 {% if first_name %}
-  <p>Thanks for contacting us, {{first_name}}</p>
+  <p>Thanks for contacting us, {{first_name}} {{last_name}}</p>
 {% endif %}
 <h1>Homepage content here</h1>
 <a href="{{ url_for('contact') }}" class="btn">Contact Us</a>
